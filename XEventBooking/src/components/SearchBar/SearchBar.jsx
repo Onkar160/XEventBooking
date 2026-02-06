@@ -20,7 +20,7 @@ export default function SearchBar({
     >
       <TextField
         type="text"
-        label="Search By Hospital"
+        label="Search By Event"
         variant="outlined"
         fullWidth
         value={inputText}
