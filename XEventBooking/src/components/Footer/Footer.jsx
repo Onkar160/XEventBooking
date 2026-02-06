@@ -1,5 +1,5 @@
 import { Container, Box, IconButton, Stack, Grid } from "@mui/material";
-import MedifyLogo from "../../assets/medify_logo.png";
+import Logo from "../../assets/logo.png";
 import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
@@ -9,18 +9,18 @@ import { IoIosArrowForward } from "react-icons/io";
 export default function Footer() {
   let aboutUs1 = [
     "About Us",
-    "Our Pricing",
-    "Our Gallery",
-    "Appointment",
+    "Pricing",
+    "Gallery",
+    "Contact Us",
     "Privacy Policy",
   ];
 
   let aboutUs2 = [
-    "Orthology",
-    "Neurology",
-    "Dental Care",
-    "Opthalmology",
-    "Cardiology",
+    "Event Management",
+    "Real-time Tracking",
+    "Customizable Features",
+    "Support",
+    "Security",
   ];
 
   return (
@@ -28,7 +28,7 @@ export default function Footer() {
       <Container
         disableGutters
         sx={{
-          bgcolor: "#1B3C74",
+          bgcolor: "#2AA7FF",
           minHeight: "424px",
           display: "flex",
           pt: { xs: 4, md: 5, lg: 10, xl: 12 },
@@ -54,7 +54,7 @@ export default function Footer() {
         >
           <Grid>
             <Stack spacing={{ xs: 3, md: 20 }}>
-              <img src={MedifyLogo} alt="Medify Logo" width="126.77px" />
+              <img src={Logo} alt="Event Logo" width="126.77px" />
               <Box display="flex" gap="20px">
                 <IconButton
                   sx={{
@@ -99,7 +99,7 @@ export default function Footer() {
             <Grid
               container
               sx={{ flexWrap: "wrap" }}
-              spacing={{ xs: 3,sm: 15, md: 1, lg: 4, xl: 15 }}
+              spacing={{ xs: 3, sm: 15, md: 1, lg: 4, xl: 15 }}
             >
               <Grid>
                 {aboutUs1.map((about) => {
@@ -147,7 +147,7 @@ export default function Footer() {
           </Grid>
         </Grid>
         <p style={{ color: "white", marginTop: "30px", marginBottom: "30px" }}>
-          Copyright ©2023 Surya Nursing Home.com. All Rights Reserved
+          Copyright ©2025 EventTracker.com. All Rights Reserved
         </p>
       </Container>
     </footer>
