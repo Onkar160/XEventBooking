@@ -14,7 +14,7 @@ export default function BookingModal({
   setOpen,
   selectedDate,
   selectedTime,
-  hospitalList,
+  eventList,
   bookingID,
   persistBookings,
   setSnackbar,
@@ -46,7 +46,7 @@ export default function BookingModal({
   const formSubmit = (e) => {
     e.preventDefault();
     // setBookingEmail(email);
-    persistBookings(bookingID, hospitalList, email, selectedDate, selectedTime);
+    persistBookings(bookingID, eventList, email, selectedDate, selectedTime);
     setOpen(!open);
     setSnackbar(true);
   };
