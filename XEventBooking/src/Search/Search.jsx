@@ -2,7 +2,7 @@ import NavBar from "../components/NavBar/NavBar";
 import FAQs from "../components/Sections/FAQs/FAQ";
 import DownloadApp from "../components/Sections/DownloadApp/DownloadApp";
 import Footer from "../components/Footer/Footer";
-import SearchHospital from "../components/SearchHospital/SearchHospital";
+import SearchEvent from "../components/SearchEvent/SearchEvent";
 import {
   Box,
   Container,
@@ -12,8 +12,8 @@ import {
 } from "@mui/material";
 import { useState, useEffect, useMemo, useCallback } from "react";
 import { useSearchParams } from "react-router";
-import HospitalCard from "../components/HospitalCard/HospitalCard";
-import Banner from "../assets/appointment_banner.png";
+import EventCard from "../components/EventCard/EventCard";
+import Banner from "../assets/banner.png";
 import { GoVerified } from "react-icons/go";
 import MyContext from "./MyContext";
 import BookingModal from "../components/BookingModal/BookingModal";
@@ -27,7 +27,7 @@ export default function Search() {
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedTime, setSelectedTime] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
-  const [hospitalList, setHospitalList] = useState([]);
+  const [eventList, setEventList] = useState([]);
   const [bookingID, setBookingID] = useState(null);
   const [openSnackbar, setSnackbar] = useState(false);
 
@@ -46,28 +46,44 @@ export default function Search() {
     []
   );
 
-  const fetchHospitalsList = async () => {
+  const fetchEventsList = async () => {
     try {
       const response = await axios.get(
-        `https://meddata-backend.onrender.com/data?state=${selectedState}&city=${selectedCity}`
+        `https://eventdata.onrender.com/events?state=${selectedState}&city=${selectedCity}`
       );
       // console.log(response.data);
-      setHospitalList(response.data);
+      setEventList(response.data);
     } catch (error) {
       console.error(error);
+
     }
   };
 
   const persistBookings = useCallback(
-    (bookingID, hospitalList, email, selectedDate, selectedTime) => {
+    (bookingID, eventList, email, selectedDate, selectedTime) => {
       let currentBookings = JSON.parse(localStorage.getItem("bookings")) || [];
-      let hospital = hospitalList.find(
-        (item) => item["Provider ID"] == bookingID
+      let eventItem = eventList.find(
+        (item) =>
+          item.id == bookingID ||
+          item.eventId == bookingID ||
+          item.eventName == bookingID ||
+          item.name == bookingID ||
+          item.title == bookingID
       );
-      hospital.bookingEmail = email;
-      hospital.bookingDate = selectedDate;
-      hospital.bookingTime = selectedTime;
-      currentBookings.push(hospital);
+      if (!eventItem) {
+        eventItem = eventList.find(
+          (item) =>
+            `${item.address || ""}-${item.city || ""}-${item.state || ""}` ===
+            bookingID
+        );
+      }
+      if (!eventItem) {
+        return;
+      }
+      eventItem.bookingEmail = email;
+      eventItem.bookingDate = selectedDate;
+      eventItem.bookingTime = selectedTime;
+      currentBookings.push(eventItem);
       localStorage.setItem("bookings", JSON.stringify(currentBookings));
     },
     []
@@ -78,7 +94,7 @@ export default function Search() {
     const state = params.get("state");
     const city = params.get("city");
     if (state && city) {
-      setHospitalList([]);
+      setEventList([]);
       setSelectedState(state);
       setSelectedCity(city);
     }
@@ -86,7 +102,7 @@ export default function Search() {
 
   useEffect(() => {
     if (selectedState && selectedCity) {
-      fetchHospitalsList();
+      fetchEventsList();
     }
   }, [selectedCity]);
 
@@ -131,7 +147,7 @@ export default function Search() {
               p={3}
               borderRadius={4}
             >
-              <SearchHospital />
+              <SearchEvent />
             </Box>
           </Box>
         </Box>
@@ -148,8 +164,7 @@ export default function Search() {
         >
           <Stack spacing={1} pb={5}>
             <Typography variant="h1" fontSize={28} fontWeight={500}>
-              {hospitalList.length} medical centers available in{" "}
-              {selectedCity.toLowerCase()}
+              {eventList.length} events available in {selectedCity.toLowerCase()}
             </Typography>
             <Typography
               color="#787887"
@@ -159,7 +174,7 @@ export default function Search() {
               alignItems="center"
             >
               <GoVerified fontSize="25" style={{ marginRight: "20px" }} />
-              Book appointments with minimum wait-time & verified doctor details
+              Book tickets with minimum wait-time & verified event details
             </Typography>
           </Stack>
           <Box
@@ -174,7 +189,7 @@ export default function Search() {
           >
             <Stack width={{ sm: "100%", md: "100%", xl: "66%" }} spacing={3}>
               {selectedCity && selectedState ? (
-                !hospitalList.length ? (
+                !eventList.length ? (
                   <Box
                     backgroundColor="white"
                     height="fit-content"
@@ -186,12 +201,19 @@ export default function Search() {
                     <CircularProgress />
                   </Box>
                 ) : (
-                  hospitalList.map((hospital) => {
+                  eventList.map((eventItem, index) => {
+                    const eventKey =
+                      eventItem?.id ||
+                      eventItem?.eventId ||
+                      eventItem?.eventName ||
+                      eventItem?.name ||
+                      eventItem?.title ||
+                      `${eventItem?.address || ""}-${eventItem?.city || ""}-${eventItem?.state || ""}`;
                     return (
-                      <HospitalCard
-                        type="Hospital Card"
-                        hospital={hospital}
-                        key={hospital["Phone Number"]}
+                      <EventCard
+                        type="Event Card"
+                        event={eventItem}
+                        key={`${eventKey}-${index}`}
                       />
                     );
                   })
@@ -224,7 +246,7 @@ export default function Search() {
           setOpen={setModalOpen}
           selectedDate={selectedDate}
           selectedTime={selectedTime}
-          hospitalList={hospitalList}
+          eventList={eventList}
           bookingID={bookingID}
           persistBookings={persistBookings}
           setSnackbar={setSnackbar}

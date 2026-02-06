@@ -2,16 +2,14 @@ import NavBar from "../components/NavBar/NavBar";
 import Footer from "../components/Footer/Footer";
 import Hero from "../components/HeroSlider/Hero";
 import Offers from "../components/Sections/Offers/Offers";
-import SearchHospital from "../components/SearchHospital/SearchHospital";
+import SearchEvent from "../components/SearchEvent/SearchEvent";
 import { Box } from "@mui/material";
 import IconLayout from "../components/IconLayout/IconLayout";
-import Specialization from "../components/Sections/Specialization/Specialization";
-import Specialists from "../components/Sections/Specialists/Specialists";
 import FAQs from "../components/Sections/FAQs/FAQ";
 import Blogs from "../components/Sections/Blogs/Blogs";
 import DownloadApp from "../components/Sections/DownloadApp/DownloadApp";
-import PatientCaring from "../components/Sections/PatientCaring/PatientCaring";
-import OurFamilies from "../components/Sections/OurFamilies/OurFamilies";
+import EventTracking from "../components/Sections/EventTracking/EventTracking";
+import EventTracker from "../components/Sections/EventTracker/EventTracker";
 
 export default function Home() {
   return (
@@ -41,15 +39,13 @@ export default function Home() {
         py={3}
         px={3}
       >
-        <SearchHospital />
+        <SearchEvent />
         <IconLayout />
       </Box>
       <Offers />
-      <Specialization />
-      <Specialists />
-      <PatientCaring />
+      <EventTracking />
       <Blogs />
-      <OurFamilies />
+      <EventTracker />
       <FAQs />
       <DownloadApp />
       <Footer />

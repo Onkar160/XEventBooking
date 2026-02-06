@@ -4,17 +4,25 @@ import { Box, Stack, Grid, Container, Typography } from "@mui/material";
 import DownloadApp from "../components/Sections/DownloadApp/DownloadApp";
 import Footer from "../components/Footer/Footer";
 import { useState, useEffect, useCallback } from "react";
-import Banner from "../assets/appointment_banner.png";
-import HospitalCard from "../components/HospitalCard/HospitalCard";
+import Banner from "../assets/banner.png";
+import EventCard from "../components/EventCard/EventCard";
 
 export default function MyBookings() {
   let totalBookings = JSON.parse(localStorage.getItem("bookings")) || [];
   const [bookings, setBookings] = useState([]);
 
   const filterBookings = useCallback((inputText, totalBookings) => {
-    const filteredList = totalBookings.filter((booking) =>
-      booking["Hospital Name"].includes(inputText.toUpperCase())
-    );
+    const normalizedInput = inputText.trim().toLowerCase();
+    const filteredList = totalBookings.filter((booking) => {
+      const eventName =
+        booking?.eventName ||
+        booking?.name ||
+        booking?.title ||
+        booking?.["Event Name"] ||
+        booking?.["Hospital Name"] ||
+        "";
+      return eventName.toLowerCase().includes(normalizedInput);
+    });
     // console.log(filteredList);
     setBookings(filteredList);
   }, []);
@@ -112,10 +120,10 @@ export default function MyBookings() {
                 </Box>
               ) : (
                 bookings.map((booking, ind) => (
-                  <HospitalCard
+                  <EventCard
                     type="Booking Card"
-                    hospital={booking}
-                    key={booking["Provider ID"] + ind}
+                    event={booking}
+                    key={`${booking?.id || booking?.eventId || booking?.eventName || booking?.name || booking?.title || booking?.address || "booking"}-${ind}`}
                   />
                 ))
               )}
