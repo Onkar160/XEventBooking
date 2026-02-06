@@ -43,19 +43,18 @@ export default function Search() {
         timings: ["06:00 PM", "06:30 PM", "07:00 PM", "07:30 PM"],
       },
     ],
-    []
+    [],
   );
 
   const fetchEventsList = async () => {
     try {
       const response = await axios.get(
-        `https://eventdata.onrender.com/events?state=${selectedState}&city=${selectedCity}`
+        `https://eventdata.onrender.com/events?state=${selectedState}&city=${selectedCity}`,
       );
       // console.log(response.data);
       setEventList(response.data);
     } catch (error) {
       console.error(error);
-
     }
   };
 
@@ -68,13 +67,13 @@ export default function Search() {
           item.eventId == bookingID ||
           item.eventName == bookingID ||
           item.name == bookingID ||
-          item.title == bookingID
+          item.title == bookingID,
       );
       if (!eventItem) {
         eventItem = eventList.find(
           (item) =>
             `${item.address || ""}-${item.city || ""}-${item.state || ""}` ===
-            bookingID
+            bookingID,
         );
       }
       if (!eventItem) {
@@ -86,7 +85,7 @@ export default function Search() {
       currentBookings.push(eventItem);
       localStorage.setItem("bookings", JSON.stringify(currentBookings));
     },
-    []
+    [],
   );
 
   useEffect(() => {
@@ -164,7 +163,7 @@ export default function Search() {
         >
           <Stack spacing={1} pb={5}>
             <Typography variant="h1" fontSize={28} fontWeight={500}>
-              {eventList.length} events available in {selectedCity.toLowerCase()}
+              {eventList.length} events available in selectedCity
             </Typography>
             <Typography
               color="#787887"
