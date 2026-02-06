@@ -1,7 +1,7 @@
 import { Container, Box, Typography } from "@mui/material";
-import Cards from "../../../assets/cards.png";
+import Peoples from "../../../assets/Peoples.png";
 
-export default function OurFamilies() {
+export default function EventTracker() {
   return (
     <section>
       <Container
@@ -31,7 +31,7 @@ export default function OurFamilies() {
               fontWeight={600}
               textAlign={{ xs: "center", lg: "start" }}
             >
-              CARING FOR THE HEALTH OF YOU AND YOUR FAMILY.
+              TRACKING EVENTS AND INSIGHTS FOR YOU AND YOUR TEAM.
             </Typography>
             <Typography
               color="#1B3C74"
@@ -39,7 +39,7 @@ export default function OurFamilies() {
               variant="h3"
               textAlign={{ xs: "center", lg: "start" }}
             >
-              Our Families
+              Event Tracker
             </Typography>
           </Box>
           <Typography
@@ -48,16 +48,14 @@ export default function OurFamilies() {
             textAlign={{ xs: "center", lg: "start" }}
             lineHeight={2.5}
           >
-            We will work with you to develop individualised care plans,
-            including management of chronic diseases. If we cannot assist, we
-            can provide referrals or advice about the type of practitioner you
-            require. We treat all enquiries sensitively and in the strictest
-            confidence.
+            We help you track attendance, engagement, and bookings so you can
+            improve your event experience. If you need help, we provide support
+            and guidance with quick insights and easy access to key metrics.
           </Typography>
         </Box>
         <Box
           component="img"
-          src={Cards}
+          src={Peoples}
           alt="Mobile_image"
           width={{ xs: "100%", lg: "40%" }}
         />

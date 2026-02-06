@@ -1,8 +1,8 @@
 import { Container, Box, Stack, Typography } from "@mui/material";
-import Caring from "../../../assets/patient_caring.png";
+import EventTrackingLogo from "../../../assets/EventTracking.png";
 import VerifiedIcon from "@mui/icons-material/Verified";
 
-export default function PatientCaring() {
+export default function EventTracking() {
   return (
     <section>
       <Container
@@ -20,8 +20,8 @@ export default function PatientCaring() {
       >
         <Box
           component="img"
-          src={Caring}
-          alt="patient_caring image"
+          src={EventTrackingLogo}
+          alt="patient_EventTrackingLogo image"
           width={{ xs: "100%", lg: "50%" }}
         />
         <Box
@@ -38,14 +38,14 @@ export default function PatientCaring() {
               fontWeight={600}
               textAlign={{ xs: "center", md: "start" }}
             >
-              HELPING PATIENTS FROM AROUND THE GLOBE!!
+              CONNECTING PEOPLE THROUGH EVENTS!!
             </Typography>
             <Typography
               variant="h3"
               fontWeight={600}
               textAlign={{ xs: "center", lg: "start" }}
             >
-              Patient <span style={{ color: "#2AA7FF" }}>Caring</span>
+              Event <span style={{ color: "#2AA7FF" }}>Tracking</span>
             </Typography>
           </Box>
           <Typography
@@ -53,26 +53,26 @@ export default function PatientCaring() {
             variant="p"
             textAlign={{ xs: "center", lg: "start" }}
           >
-            Our goal is to deliver quality of care in a courteous, respectful,
-            and compassionate manner. We hope you will allow us to care for you
-            and strive to be the first and best choice for healthcare.
+            Our goal is to deliver an exceptional event experience in a
+            courteous, respectful, and engaging manner. We hope you will allow
+            us to help you stay updated and connected through our platform.
           </Typography>
           <Box display="flex" gap="10px" alignItems="center">
             <VerifiedIcon sx={{ color: "#2AA7FF" }} />
             <Typography variant="p" fontWeight={500} color="#1B3C74">
-              Stay Updated About Your Health
+              Stay Updated About Events
             </Typography>
           </Box>
           <Box display="flex" gap="10px" alignItems="center">
             <VerifiedIcon sx={{ color: "#2AA7FF" }} />
             <Typography variant="p" fontWeight={500} color="#1B3C74">
-              Check Your Results Online
+              Check Event Details Online
             </Typography>
           </Box>
           <Box display="flex" gap="10px" alignItems="center">
             <VerifiedIcon sx={{ color: "#2AA7FF" }} />
             <Typography variant="p" fontWeight={500} color="#1B3C74">
-              Manage Your Appointments
+              Manage Your Bookings
             </Typography>
           </Box>
         </Box>

@@ -7,7 +7,7 @@ import {
   InputAdornment,
   Button,
 } from "@mui/material";
-import Mobile from "../../../assets/mobiles.jpg";
+import Mobile from "../../../assets/mobiles.png";
 import { IoLogoGooglePlaystore } from "react-icons/io5";
 import { IoLogoApple } from "react-icons/io5";
 
@@ -49,8 +49,8 @@ export default function DownloadApp() {
                 fontWeight="600"
                 textAlign={{ xs: "center", lg: "start" }}
               >
-                Download the <span style={{ color: "#2AA7FF" }}>Medify</span>{" "}
-                App
+                Download the{" "}
+                <span style={{ color: "#2AA7FF" }}>Event Tracker</span> App
               </Typography>
               {/* <Typography color="#1B3C74" variant="h2" fontWeight="600">
              
@@ -79,7 +79,7 @@ export default function DownloadApp() {
                 <TextField
                   type="number"
                   variant="outlined"
-                  placeholder="Enter your number"
+                  placeholder="Enter phone number"
                   id="outlined-textfield-number"
                   sx={{
                     minWidth: "100px",

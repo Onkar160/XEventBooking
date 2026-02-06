@@ -6,7 +6,7 @@ import {
   Divider,
   Grid,
 } from "@mui/material";
-import Detox from "../../../assets/news_card.png";
+import Detox from "../../../assets/news_card.jpg";
 import Rebecca from "../../../assets/rebecca_lee.png";
 
 export default function Blogs() {
@@ -54,16 +54,16 @@ export default function Blogs() {
                 px={2}
                 pt={1}
               >
-                <Typography color="#77829D">Medical</Typography>
+                <Typography color="#77829D">Mumbai</Typography>
                 <Typography color="#77829D">March 31, 2022</Typography>
               </Stack>
               <Stack flexWrap="wrap" spacing={1} px={2} pt={0.5} pb={2.5}>
                 <Typography color="#1B3C74">
-                  6 Tips To Protect Your Mental Health When You're Sick
+                  5 Strategies to Maximize Your Event Attendance
                 </Typography>
                 <Stack direction="row" alignItems="center" gap="15px">
                   <img src={Rebecca} alt="Rebacca" />
-                  <Typography color="#1B3C74">Rebecca Lee</Typography>
+                  <Typography color="#1B3C74">John Doe</Typography>
                 </Stack>
               </Stack>
             </Box>
@@ -83,16 +83,16 @@ export default function Blogs() {
                 px={2}
                 pt={1}
               >
-                <Typography color="#77829D">Medical</Typography>
+                <Typography color="#77829D">Mumbai</Typography>
                 <Typography color="#77829D">March 31, 2022</Typography>
               </Stack>
               <Stack flexWrap="wrap" spacing={1} px={2} pt={0.5} pb={2.5}>
                 <Typography color="#1B3C74">
-                  6 Tips To Protect Your Mental Health When You're Sick
+                  5 Strategies to Maximize Your Event Attendance
                 </Typography>
                 <Stack direction="row" alignItems="center" gap="15px">
                   <img src={Rebecca} alt="Rebacca" />
-                  <Typography color="#1B3C74">Rebecca Lee</Typography>
+                  <Typography color="#1B3C74">John Doe</Typography>
                 </Stack>
               </Stack>
             </Box>
@@ -112,16 +112,16 @@ export default function Blogs() {
                 px={2}
                 pt={1}
               >
-                <Typography color="#77829D">Medical</Typography>
+                <Typography color="#77829D">Mumbai</Typography>
                 <Typography color="#77829D">March 31, 2022</Typography>
               </Stack>
               <Stack flexWrap="wrap" spacing={1} px={2} pt={0.5} pb={2.5}>
                 <Typography color="#1B3C74">
-                  6 Tips To Protect Your Mental Health When You're Sick
+                  5 Strategies to Maximize Your Event Attendance
                 </Typography>
                 <Stack direction="row" alignItems="center" gap="15px">
                   <img src={Rebecca} alt="Rebacca" />
-                  <Typography color="#1B3C74">Rebecca Lee</Typography>
+                  <Typography color="#1B3C74">John Doe</Typography>
                 </Stack>
               </Stack>
             </Box>

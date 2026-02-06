@@ -1,27 +1,28 @@
 import { Typography, Box, Container, Stack } from "@mui/material";
-import DoctorPatient from "../../../assets/doctor_patient_talk.jpg";
+import FAQimage from "../../../assets/FAQ.jpg";
 import MyAccordion from "../../Accordion/Accordion";
 
 export default function FAQs() {
   const FAQ = [
     {
-      question: "Why choose our medical for your family?",
+      question: "Why choose our event tracking platform?",
       answer:
-        "We provide trusted, compassionate care with expert doctors and advanced facilities—all under one roof.",
+        "We help you manage and track events with real-time updates and a smooth booking experience.",
     },
     {
-      question: "Why we are different from others?",
+      question: "What makes us different from others?",
       answer:
-        "Our patient-first approach, personalized treatment plans, and round-the-clock support set us apart.",
+        "Our platform offers verified event details, fast bookings, and easy tracking in one place.",
     },
     {
-      question: "Trusted & Experienced Senior Care with Compassion and Love",
-      answer: `“Caring for You and Your Family, Always.”`,
+      question: "How do we ensure data security?",
+      answer:
+        "We use secure practices to protect your data and keep your booking information safe.",
     },
     {
-      question: "How to get an appointment for emergency cases?",
+      question: "How can I get support for my events?",
       answer:
-        "For emergency cases, call our 24/7 helpline or visit the nearest branch directly—no prior appointment needed.",
+        "Reach out through our support page and we will help you as quickly as possible.",
     },
   ];
   return (
@@ -62,7 +63,7 @@ export default function FAQs() {
           >
             <Box
               component="img"
-              src={DoctorPatient}
+              src={FAQimage}
               alt="doctor patient image"
               width={{ xs: "100%", lg: "50%" }}
             />
