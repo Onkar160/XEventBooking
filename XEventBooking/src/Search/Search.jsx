@@ -163,7 +163,7 @@ export default function Search() {
         >
           <Stack spacing={1} pb={5}>
             <Typography variant="h1" fontSize={28} fontWeight={500}>
-              {eventList.length} events available in selectedCity
+              {eventList.length} events available in {selectedCity}
             </Typography>
             <Typography
               color="#787887"
