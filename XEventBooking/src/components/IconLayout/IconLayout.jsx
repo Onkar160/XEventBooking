@@ -1,44 +1,44 @@
 import { Typography, Box, Stack, Grid } from "@mui/material";
-import Doctor from "../../assets/Doctor.png";
-import Labs from "../../assets/Drugstore.png";
-import Hospital from "../../assets/Hospital.png";
-import Medicine from "../../assets/Capsule.png";
-import Ambulance from "../../assets/Ambulance.png";
+import Event from "../../assets/Event.png";
+import Venues from "../../assets/Venues.png";
+import Tickets from "../../assets/Tickets.png";
+import Workshops from "../../assets/Workshops.png";
+import Services from "../../assets/Services.png";
 import IconCard from "../IconCard/IconCard";
 
 export default function IconLayout() {
   const cardData = [
     {
-      text: "Doctor",
-      icon: Doctor,
+      text: "Events",
+      icon: Event,
       bgcolor: "#FAFBFE",
       selected: false,
       boxshadow: false,
     },
     {
-      text: "Labs",
-      icon: Labs,
+      text: "Venues",
+      icon: Venues,
       bgcolor: "#FAFBFE",
       selected: false,
       boxshadow: false,
     },
     {
-      text: "Hospitals",
-      icon: Hospital,
+      text: "Tickets",
+      icon: Tickets,
       bgcolor: "#FAFBFE",
       selected: true,
       boxshadow: false,
     },
     {
-      text: "Medical Store",
-      icon: Medicine,
+      text: "Workshops",
+      icon: Workshops,
       bgcolor: "#FAFBFE",
       selected: false,
       boxshadow: false,
     },
     {
-      text: "Ambulance",
-      icon: Ambulance,
+      text: "Services",
+      icon: Services,
       bgcolor: "#FAFBFE",
       selected: false,
       boxshadow: false,
