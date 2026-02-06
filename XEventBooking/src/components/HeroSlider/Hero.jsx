@@ -1,6 +1,6 @@
 import { Typography, Box, Container, Stack, Button } from "@mui/material";
 import { Link } from "react-router";
-import DoctorHero from "../../assets/doctor_hero.png";
+import HeroImage from "../../assets/Hero_Image.png";
 
 export default function Hero() {
   return (
@@ -20,10 +20,12 @@ export default function Hero() {
         disableGutters
         maxWidth={false}
       >
-        <Stack sx={{ width: { xs: "100%", lg: "50%" }, alignSelf: "flex-start" }}>
+        <Stack
+          sx={{ width: { xs: "100%", lg: "50%" }, alignSelf: "flex-start" }}
+        >
           <Box>
             <Typography variant="h4" color="#102851" fontWeight={600}>
-              Skip the travel! Find Online
+              Skip the hassle! Track Online
             </Typography>
             <Typography
               variant="h2"
@@ -32,13 +34,13 @@ export default function Hero() {
               lineHeight={1.3}
               fontStyle="bold"
             >
-              Medical <span style={{ color: "#2AA7FF" }}>Centers</span>
+              Event <span style={{ color: "#2AA7FF" }}>Tracker</span>
             </Typography>
           </Box>
 
           <Typography variant="h6" color="#5C6169" fontWeight={400} mt={3}>
-            Connect instantly with a 24x7 specialist or choose to video visit a
-            particular doctor.
+            Connect instantly with our platform to manage and track your events
+            efficiently.
           </Typography>
 
           <Link to="/search" style={{ marginTop: "35px" }}>
@@ -47,13 +49,13 @@ export default function Hero() {
               size="large"
               sx={{ boxShadow: "none", borderRadius: "8px", px: 5, py: 1.5 }}
             >
-              Find Centers
+              Find Events
             </Button>
           </Link>
         </Stack>
         <Box sx={{ width: { xs: "100%", lg: "50%" } }}>
           <img
-            src={DoctorHero}
+            src={HeroImage}
             alt="Doctor Hero Image"
             style={{ filter: "drop-shadow(-5px 20px 10px rgba(0, 0, 0, 0.3))" }}
             width="100%"
