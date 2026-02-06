@@ -15,18 +15,18 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-import MedifyLogo from "../../assets/medify_logo.png";
+import Logo from "../../assets/logo.png";
 import { useState } from "react";
 import { Link, useLocation } from "react-router";
 
 export default function NavBar({ background }) {
   const [navOptions, setNavOptions] = useState([
-    { name: "Find Doctors", path: "#" },
-    { name: "Hospitals", path: "/search" },
-    { name: "Medicines", path: "#" },
-    { name: "Surgeries", path: "#" },
-    { name: "Software for Provider", path: "#" },
-    { name: "Facilities", path: "#" },
+    { name: "Find Events", path: "#" },
+    { name: "Venues", path: "/search" },
+    { name: "Tickets", path: "#" },
+    { name: "Workshops", path: "#" },
+    { name: "Event Management Software", path: "#" },
+    { name: "Services", path: "#" },
   ]);
   return (
     <header>
@@ -39,9 +39,8 @@ export default function NavBar({ background }) {
         }}
       >
         <Typography>
-          The health and well-being of our patients and their health care team
-          will always be our priority, so we follow the best practices for
-          cleanliness.
+          Stay updated with the latest events and maximize your experience with
+          our platform.
         </Typography>
       </Box>
       <Container
@@ -68,8 +67,8 @@ export default function NavBar({ background }) {
           <Box>
             <Link to="/">
               <img
-                src={MedifyLogo}
-                alt="Medify Logo"
+                src={Logo}
+                alt="Event Logo"
                 width="92px"
                 height="27px"
               />
